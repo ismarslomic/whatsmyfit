@@ -2,6 +2,10 @@
 
 Whats my fit APIs
 
+## Prerequisites
+- Node + NPM + Yarn (`brew install yarn`)
+- TSLint + Typescript (`yarn global add tslint typescript`)
+
 ## Install It
 ```bash
 $ yarn install
@@ -25,6 +29,11 @@ $ yarn start
 * Point you're browser to [http://localhost:3000](http://localhost:3000)
 * Invoke the example REST endpoint `curl http://localhost:3000/api/v1/examples`
 * Read API documentation with Swagger UI [http://localhost:3000/api-explorer/](http://localhost:3000/api-explorer/)
+
+## Linting
+```bash
+$ yarn pretest
+```
 
 ## Test It
 
