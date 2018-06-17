@@ -5,7 +5,7 @@
   "main": "index.js",
   "license" : "BSD-3-Clause",
   "scripts": {
-    "start": "cd build && node main",
+    "start": "yarn compile && cd build && node main",
     "compile": "node build.js && backpack build",
     "dev": "node build.js && backpack dev | pino -o 'short'",
     "test": "node build.js && mocha test/**/*.ts --exit"
