@@ -1,16 +1,17 @@
-import * as express from 'express';
-import { Application } from 'express';
-import * as path from 'path';
 import * as bodyParser from 'body-parser';
+import * as cookieParser from 'cookie-parser';
+import * as express from 'express';
+// tslint:disable-next-line:no-duplicate-imports
+import { Application } from 'express';
 import * as http from 'http';
 import * as os from 'os';
-import * as cookieParser from 'cookie-parser';
-import swaggerify from './swagger';
-import l from './logger';
+import * as path from 'path';
+import logger from './logger';
+import swagger from './swagger';
 
 const app = express();
 
-export default class ExpressServer {
+export default class Server {
   constructor() {
     const root = path.normalize(__dirname + '/../..');
     app.set('appPath', root + 'client');
@@ -20,13 +21,14 @@ export default class ExpressServer {
     app.use(express.static(`${root}/public`));
   }
 
-  router(routes: (app: Application) => void): ExpressServer {
-    swaggerify(app, routes)
+  router(routes: (app: Application) => void): Server {
+    swagger(app, routes);
     return this;
   }
 
-  listen(port: number = parseInt(process.env.PORT)): Application {
-    const welcome = port => () => l.info(`up and running in ${process.env.NODE_ENV || 'development'} @: ${os.hostname() } on port: ${port}}`);
+  listen(port: number = Number(process.env.PORT)): Application {
+    const welcome = port => () => logger.info(`up and running in ${process.env.NODE_ENV ||
+    'development'} @: ${os.hostname() } on port: ${port}}`);
     http.createServer(app).listen(port, welcome(port));
     return app;
   }
