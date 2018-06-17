@@ -8,6 +8,7 @@
     "start": "cd build && node main",
     "compile": "node build.js && backpack build",
     "dev": "node build.js && backpack dev | pino -o 'short'",
+    "pretest": "yarn install",
     "test": "node build.js && mocha test/**/*.ts --exit"
   },
   "engines": {
