@@ -3,22 +3,28 @@
 Whats my fit APIs
 
 ## Install It
-```
-yarn install
+```bash
+$ yarn install
 ```
 
 ## Run It
 #### Run in *development* mode:
 
-```
-yarn dev
+```bash
+$ yarn dev
 ```
 
 #### Run in *production* mode:
 
+```bash
+$ yarn compile
+$ yarn start
 ```
-yarn compile
-yarn start
+
+## Test It
+
+```bash
+$ yarn test
 ```
 
 ### Try It
