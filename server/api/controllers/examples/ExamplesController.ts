@@ -1,13 +1,13 @@
-import ExamplesService from '../../services/examples.service';
 import { Request, Response } from 'express';
+import ExamplesService from '../../services/ExamplesService';
 
-export class Controller {
+export class ExamplesController {
   all(req: Request, res: Response): void {
     ExamplesService.all().then(r => res.json(r));
   }
 
   byId(req: Request, res: Response): void {
-    ExamplesService.byId(req.params.id).then(r => {
+    ExamplesService.byId(req.params.id).then((r) => {
       if (r) res.json(r);
       else res.status(404).end();
     });
@@ -22,4 +22,5 @@ export class Controller {
     );
   }
 }
-export default new Controller();
+
+export default new ExamplesController();

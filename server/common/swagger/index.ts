@@ -3,7 +3,7 @@ import { Application } from 'express';
 import * as path from 'path';
 
 export default function (app: Application, routes: (app: Application) => void) {
-  middleware(path.join(__dirname, 'Api.yaml'), app, function(err, middleware) {
+  middleware(path.join(__dirname, 'Api.yaml'), app, (err, middleware) => {
 
     // Enable Express' case-sensitive and strict options
     // (so "/entities", "/Entities", and "/Entities/" are all different)
@@ -18,12 +18,12 @@ export default function (app: Application, routes: (app: Application) => void) {
     app.use(middleware.parseRequest({
       // Configure the cookie parser to use secure cookies
       cookie: {
-        secret: process.env.SESSION_SECRET
+        secret: process.env.SESSION_SECRET,
       },
       // Don't allow JSON content over 100kb (default is 1mb)
       json: {
-        limit: process.env.REQUEST_LIMIT
-      }
+        limit: process.env.REQUEST_LIMIT,
+      },
     }));
 
     // These two middleware don't have any options (yet)
@@ -32,11 +32,11 @@ export default function (app: Application, routes: (app: Application) => void) {
       middleware.validateRequest());
 
     // Error handler to display the validation error as HTML
-    app.use(function (err, req, res, next) {
+    app.use((err, req, res, next) => {
       res.status(err.status);
       res.send(
         '<h1>' + err.status + ' Error</h1>' +
-        '<pre>' + err.message + '</pre>'
+        '<pre>' + err.message + '</pre>',
       );
     });
 
