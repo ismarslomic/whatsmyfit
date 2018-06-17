@@ -2,5 +2,8 @@
   "name": "whatsmyfit",
   "description": "Whats my fit APIs",
   "repository": "https://github.com/ismarslomic/whatsmyfit/issues",
-  "keywords": ["fitbit", "dashboard", "tracker"]
+  "keywords": ["fitbit", "dashboard", "tracker"],
+  "image": "heroku/nodejs",
+  "website": "https://whatsmy.fit",
+  "success_url": "/"
 }
