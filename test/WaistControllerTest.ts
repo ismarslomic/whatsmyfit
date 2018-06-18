@@ -1,11 +1,11 @@
 import { expect } from 'chai';
 import 'mocha';
 import * as request from 'supertest';
-import Server from '../Server';
+import server from '../server';
 
 describe('Waist', () => {
   it('should get all waist measurements', () =>
-    request(Server)
+    request(server)
       .get('/api/v1/waist')
       .expect('Content-Type', /json/)
       .expect(200)
@@ -17,7 +17,7 @@ describe('Waist', () => {
       }));
 
   it('should add a new waist measurement', () =>
-    request(Server)
+    request(server)
       .post('/api/v1/waist')
       .send({ value: '88.0' })
       .expect('Content-Type', /json/)
@@ -33,7 +33,7 @@ describe('Waist', () => {
       }));
 
   it('should get an waist measurement by id', () =>
-    request(Server)
+    request(server)
       .get('/api/v1/waist/2')
       .expect('Content-Type', /json/)
       .expect(200)
@@ -48,7 +48,7 @@ describe('Waist', () => {
       }));
 
   it('should throw 404 if waist measurement not found', () =>
-    request(Server)
+    request(server)
       .get('/api/v1/waist/10')
       .expect(404),
   );
