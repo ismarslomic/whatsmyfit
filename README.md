@@ -43,8 +43,8 @@ $ yarn test
 ## Environments
 - `test` - runs locally or on Heroku CI when executing `yarn test`
 - `development` - runs locally when executing `yarn dev`, url: http://localhost:3000
-- `staging` - runs in `staging` phase of Heroku Pipeline when pull requests are merged to `master` branch, executing `yarn start`, url: https://staging.whatsmy.fit
-- `production` - runs in `production` phase of Heroku Pipeline when `manually` promoted from staging, executing `yarn start`, url: https://whatsmy.fit
+- `staging` - runs in `staging` phase of Heroku Pipeline when pull requests are merged to `master` branch, when executing `yarn start`, url: https://staging.whatsmy.fit
+- `production` - runs in `production` phase of Heroku Pipeline when `manually` promoted from staging, when executing `yarn start`, url: https://whatsmy.fit
 
 ## Security
 - TLS is enabled for `staging` and `production` environments by enabling TLS in Heroku. In addition ExpressJS server 
