@@ -8,6 +8,7 @@ import * as os from 'os';
 import * as path from 'path';
 import logger from './logger';
 import swagger from './swagger';
+import sslRedirect from './sslRedirect';
 
 const app = express();
 
@@ -15,6 +16,7 @@ export default class Server {
   constructor() {
     const root = path.normalize(__dirname + '/../..');
     app.set('appPath', root + 'client');
+    app.use(sslRedirect());
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({ extended: true }));
     app.use(cookieParser(process.env.SESSION_SECRET));
