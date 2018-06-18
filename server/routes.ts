@@ -1,6 +1,6 @@
 import { Application } from 'express';
-import ExamplesRouter from './api/controllers/examples/ExamplesRouter';
+import WaistRoutes from './api/controllers/waist/WaistRoutes';
 
 export default function routes(app: Application): void {
-  app.use('/api/v1/examples', ExamplesRouter);
+  app.use('/api/v1/waist', WaistRoutes);
 }
