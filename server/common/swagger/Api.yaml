@@ -5,8 +5,8 @@ info:
   description: Whats my fit APIs
 basePath: /api/v1
 tags:
-  - name: Examples
-    description: Simple example endpoints
+  - name: Waist
+    description: Waist measurement endpoints
 
 consumes:
   - application/json
@@ -14,44 +14,68 @@ produces:
   - application/json
 
 definitions:
-  ExampleBody:
+  WaistBody:
     type: object
-    title: example
+    title: waist
     required:
-      - name
+      - value
     properties:
-      name:
+      value:
         type: string
-        description: The example name
+        description: The waist measurement value
+      registered:
+        type: string
+        description: The date this measurement was registered
+      type:
+        type: string
+        description: The type of this measurement
+      id:
+        type: number
+        description: Unique id of this measurement
 
+    example:
+      value: "78.0"
+      registered: "2018-06-17T23:47:39.278Z"
+      type: "WAIST"
+      id: 5
 paths:
-  /examples:
+  /waist:
     get:
       tags:
-        - Examples
-      description: Fetch all examples
+        - Waist
+      description: Fetch all waist measurements
       responses:
         200:
-          description: Returns all examples
+          description: Returns all waist measurements
+          schema:
+            $ref: '#/definitions/WaistBody'
     post:
       tags:
-        - Examples
-      description: Create a new example
+        - Waist
+      description: Create a new waist measurement
       parameters:
-        - name: body
-          in: body
-          description: number of items to skip
-          required: true
-          schema: 
-            $ref: "#/definitions/ExampleBody"
+       - in: body
+         name: waist
+         description: The waist measurement to register
+         schema:
+          type: object
+          required:
+            - value
+          properties:
+            value:
+              type: string
+          example:
+            value: "75.0"
       responses:
-        200:
-          description: Returns all examples
+        201:
+          description: Returns the new waist measurement
+          schema:
+            $ref: '#/definitions/WaistBody'
 
-  /examples/{id}:
+  /waist/{id}:
     get:
       tags:
-        - Examples
+        - Waist
       parameters:
         - name: id
           in: path
@@ -60,6 +84,8 @@ paths:
           type: integer
       responses:
         200:
-          description: Return the example with the specified id
+          description: Return the waist measurement with the specified id
+          schema:
+            $ref: '#/definitions/WaistBody'
         404:
-          description: Example not 
+          description: No waist measurement found
