@@ -11,6 +11,7 @@
     "dev": "node build.js && backpack dev | pino -o 'short'",
     "test": "mocha --exit",
     "test:coverage": "yarn compile && nyc yarn test && cat ./coverage/lcov.info | codacy-coverage --token $CODACY_PROJECT_TOKEN && rimraf ./coverage",
+    "check:nsp": "nsp check --reporter table",
     "pretest": "tslint --project . -t codeFrame"
   },
   "engines": {
@@ -19,36 +20,37 @@
     "yarn": "1.7.0"
   },
   "dependencies": {
-    "bluebird": "^3.5.0",
-    "body-parser": "^1.18.2",
+    "bluebird": "^3.5.1",
+    "body-parser": "^1.18.3",
     "cookie-parser": "^1.4.3",
-    "dotenv": "^4.0.0",
+    "dotenv": "^6.0.0",
     "express": "^4.16.2",
-    "pino": "^4.7.3",
-    "source-map-support": "^0.4.15",
+    "pino": "^4.17.3",
+    "source-map-support": "^0.5.6",
     "swagger-express-middleware": "^1.0.0-alpha.12"
   },
   "devDependencies": {
     "@types/bluebird": "^3.5.20",
-    "@types/chai": "^4.1.2",
-    "@types/express": "^4.0.35",
-    "@types/mocha": "^2.2.48",
-    "@types/pino": "^4.7.1",
-    "awesome-typescript-loader": "^3.4.1",
-    "backpack-core": "^0.4.3",
+    "@types/chai": "^4.1.4",
+    "@types/express": "^4.16.0",
+    "@types/mocha": "^5.2.2",
+    "@types/pino": "^4.16.0",
+    "awesome-typescript-loader": "^4.0.0",
+    "backpack-core": "^0.7.0",
     "chai": "^4.1.2",
     "codacy-coverage": "^3.0.0",
     "copy-webpack-plugin": "^4.5.1",
-    "mocha": "^4.0.1",
+    "mocha": "^5.2.0",
     "mocha-lcov-reporter": "^1.3.0",
+    "nsp": "^3.2.1",
     "nyc": "^12.0.2",
     "rimraf": "^2.6.2",
-    "shelljs": "^0.7.8",
-    "supertest": "^3.0.0",
-    "ts-node": "^4.1.0",
-    "tslint": "^5.3.2",
+    "shelljs": "^0.8.2",
+    "supertest": "^3.1.0",
+    "ts-node": "^6.1.1",
+    "tslint": "^5.10.0",
     "tslint-config-airbnb": "^5.9.2",
-    "typescript": "^2.7.2"
+    "typescript": "^2.9.2"
   },
   "nyc": {
     "extension": [
