@@ -1,11 +1,21 @@
 {
-  "compileOnSave": false,
   "compilerOptions": {
-    "target": "es6",
-    "module": "commonjs",
+    "rootDirs": [
+      "./server",
+      "./test"
+    ],
+    "outDir": "build/",
     "sourceMap": true,
+    "allowJs": true,
+    "noImplicitAny": false,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "experimentalDecorators": true,
+    "module": "commonjs",
+    "target": "es6",
+    "moduleResolution": "node",
     "typeRoots": ["node_modules/@types"]
   },
-  "include": ["typings.d.ts", "server/**/*.ts"],
+  "include": ["typings.d.ts", "./server" , "./test"],
   "exclude": ["node_modules"]
 }

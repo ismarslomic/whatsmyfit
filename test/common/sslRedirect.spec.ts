@@ -1,6 +1,6 @@
 import 'mocha';
 import * as request from 'supertest';
-import server from '../server';
+import server from '../../server';
 
 describe('SslRedirect', () => {
   const originalEnv = process.env.NODE_ENV;
