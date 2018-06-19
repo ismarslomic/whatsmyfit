@@ -49,6 +49,10 @@ $ yarn test
 - `staging` - runs in `staging` phase of Heroku Pipeline when pull requests are merged to `master` branch, when executing `yarn start`, url: https://staging.whatsmy.fit
 - `production` - runs in `production` phase of Heroku Pipeline when `manually` promoted from staging, when executing `yarn start`, url: https://whatsmy.fit
 
+## Skip CI jobs
+Sometimes when pushing changes unrelated to application´s code it can be useful to avoid new CI builds. 
+Commits that have `[ci skip]` or `[skip ci]` anywhere in the commit messages are ignored by Travis CI., read more at [TravisCI: Skipping a build](https://docs.travis-ci.com/user/customizing-the-build/#Skipping-a-build)
+
 ## Security
 - TLS is enabled for `staging` and `production` environments by enabling TLS in Heroku. In addition ExpressJS server 
 is configured to redirect all requests from HTTP to HTTPS, see [sslRedirect.ts](server/common/sslRedirect.ts), for these two environments
