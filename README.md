@@ -1,6 +1,7 @@
 # whatsmy.fit
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/4a91e5037d9a4d9fb9300885665c3e57)](https://www.codacy.com/app/ismarslomic/whatsmyfit?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=ismarslomic/whatsmyfit&amp;utm_campaign=Badge_Grade)
 [![Codacy Badge](https://api.codacy.com/project/badge/Coverage/4a91e5037d9a4d9fb9300885665c3e57)](https://www.codacy.com/app/ismarslomic/whatsmyfit?utm_source=github.com&utm_medium=referral&utm_content=ismarslomic/whatsmyfit&utm_campaign=Badge_Coverage)
+[![Build Status](https://travis-ci.org/ismarslomic/whatsmyfit.svg?branch=master)](https://travis-ci.org/ismarslomic/whatsmyfit)
 
 > Whats my fit APIs
 
