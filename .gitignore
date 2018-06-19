@@ -1,4 +1,16 @@
-build
+# Node packages
 node_modules
+
+# Dotenv
 .env
+
+# IntelliJ IDEA
 /.idea/**/*
+
+# Build
+/build
+*.log
+
+# Code Coverage
+/coverage
+/.nyc_output

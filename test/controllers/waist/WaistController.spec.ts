@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 import 'mocha';
 import * as request from 'supertest';
-import server from '../server';
+import server from '../../../server';
 
 describe('Waist', () => {
   it('should get all waist measurements', () =>
