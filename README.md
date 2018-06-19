@@ -1,6 +1,7 @@
 # whatsmy.fit
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/4a91e5037d9a4d9fb9300885665c3e57)](https://www.codacy.com/app/ismarslomic/whatsmyfit?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=ismarslomic/whatsmyfit&amp;utm_campaign=Badge_Grade)
 [![Codacy Badge](https://api.codacy.com/project/badge/Coverage/4a91e5037d9a4d9fb9300885665c3e57)](https://www.codacy.com/app/ismarslomic/whatsmyfit?utm_source=github.com&utm_medium=referral&utm_content=ismarslomic/whatsmyfit&utm_campaign=Badge_Coverage)
+[![Build Status](https://travis-ci.org/ismarslomic/whatsmyfit.svg?branch=master)](https://travis-ci.org/ismarslomic/whatsmyfit)
 
 > Whats my fit APIs
 
@@ -47,6 +48,10 @@ $ yarn test
 - `development` - runs locally when executing `yarn dev`, url: http://localhost:3000
 - `staging` - runs in `staging` phase of Heroku Pipeline when pull requests are merged to `master` branch, when executing `yarn start`, url: https://staging.whatsmy.fit
 - `production` - runs in `production` phase of Heroku Pipeline when `manually` promoted from staging, when executing `yarn start`, url: https://whatsmy.fit
+
+## Skip CI jobs
+Sometimes when pushing changes unrelated to application´s code it can be useful to avoid new CI builds. 
+Commits that have `[ci skip]` or `[skip ci]` anywhere in the commit messages are ignored by Travis CI., read more at [TravisCI: Skipping a build](https://docs.travis-ci.com/user/customizing-the-build/#Skipping-a-build)
 
 ## Security
 - TLS is enabled for `staging` and `production` environments by enabling TLS in Heroku. In addition ExpressJS server 

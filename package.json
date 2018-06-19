@@ -9,9 +9,8 @@
     "start": "cd build && node main",
     "compile": "node build.js && backpack build",
     "dev": "node build.js && backpack dev | pino -o 'short'",
-    "test": "if test \"$HEROKU_TEST_RUN_BRANCH\" = \"master\"; then yarn test:coverage; else yarn test:mocha; fi;",
-    "test:mocha": "mocha --exit",
-    "test:coverage": "yarn compile && nyc yarn test:mocha && cat ./coverage/lcov.info | codacy-coverage --token $CODACY_PROJECT_TOKEN && rimraf ./coverage",
+    "test": "mocha --exit",
+    "test:coverage": "yarn compile && nyc yarn test && cat ./coverage/lcov.info | codacy-coverage --token $CODACY_PROJECT_TOKEN && rimraf ./coverage",
     "pretest": "tslint --project . -t codeFrame"
   },
   "engines": {
