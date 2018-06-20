@@ -6,6 +6,7 @@ import { Application } from 'express';
 import * as http from 'http';
 import * as os from 'os';
 import * as path from 'path';
+import * as helmet from 'helmet';
 import logger from './logger';
 import swagger from './swagger';
 import sslRedirect from './sslRedirect';
@@ -17,6 +18,7 @@ export default class Server {
     const root = path.normalize(__dirname + '/../..');
     app.set('appPath', root + 'client');
     app.use(sslRedirect());
+    app.use(helmet());
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({ extended: true }));
     app.use(cookieParser(process.env.SESSION_SECRET));
