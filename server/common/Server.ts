@@ -19,6 +19,7 @@ export default class Server {
     app.set('appPath', root + 'client');
     app.use(sslRedirect());
     app.use(helmet());
+    app.use(helmet.referrerPolicy({ policy: 'same-origin' }));
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({ extended: true }));
     app.use(cookieParser(process.env.SESSION_SECRET));
