@@ -16,6 +16,6 @@ describe('SslRedirect', () => {
   it('should redirect to HTTPS when using HTTP', () =>
     request(server)
       .get('/api/v1/waist')
-      .expect(302),
+      .expect(301),
   );
 });
