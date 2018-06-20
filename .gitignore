@@ -16,4 +16,4 @@ node_modules
 /.nyc_output
 
 # Snyk
-.snyk
+/.snyk
